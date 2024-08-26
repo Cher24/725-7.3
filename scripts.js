@@ -5,7 +5,7 @@ document.getElementById('cuisineSelect').addEventListener('change', async functi
     if (cuisineType) {
         try {
             // Fetch restaurants from server
-            const response = await fetch(`http://localhost:3000/restaurants/${encodeURIComponent(cuisineType)}`);
+            const response = await fetch(`http://localhost:3000/api/projects?cuisine=${encodeURIComponent(cuisineType)}`);
             const restaurants = await response.json();
 
             // Clear the previous list
