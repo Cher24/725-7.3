@@ -1,13 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const { MongoClient } = require('mongodb');
-
 const app = express();
 const port = 3000;
-
-// MongoDB connection URI
-const uri = 'mongodb+srv://chermod2011:mWF9GqomiyBEpLpo@cluster0.e8lf4.mongodb.net/';
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Middleware
 app.use(cors());
