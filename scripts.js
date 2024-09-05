@@ -1,3 +1,11 @@
+// Connect to the socket
+let socket = io();
+
+// Listen for 'number' events from the server
+socket.on('number', (msg) => {
+    console.log('Random number: ' + msg);
+});
+
 document.getElementById('cuisineSelect').addEventListener('change', async function() {
     const cuisineType = this.value;
     const restaurantList = document.getElementById('restaurantList');
@@ -5,7 +13,7 @@ document.getElementById('cuisineSelect').addEventListener('change', async functi
     if (cuisineType) {
         try {
             // Fetch restaurants from server
-            const response = await fetch(`http://localhost:3000/api/projects?cuisine=${encodeURIComponent(cuisineType)}`);
+            const response = await fetch(`http://localhost:3000/restaurants/${encodeURIComponent(cuisineType)}`);
             const restaurants = await response.json();
 
             // Clear the previous list

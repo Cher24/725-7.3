@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const { projectsController } = require('../Controllers');
+const projectsController = require('../Controllers/projectsController');
+
 
 // Route to get all projects (restaurants)
 router.get('/', (req, res) => {
